@@ -1,5 +1,10 @@
 # Imports the Google Cloud Client Library.
 from google.cloud import spanner
+import os
+
+absFilePath = os.path.abspath(__file__)
+path, filename = os.path.split(absFilePath)
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=path+"/capacityapi.json"
 
 # Instantiate a client.
 spanner_client = spanner.Client()
